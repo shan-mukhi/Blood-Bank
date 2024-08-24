@@ -1,10 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
-// Test
-
 function Email() {
     const [email, setEmail] = useState("");
-
     const sendEmail = async (e) => {
         e.preventDefault();
 

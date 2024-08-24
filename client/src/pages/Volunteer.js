@@ -23,18 +23,14 @@ const VolunteerForm = () => {
     e.preventDefault();
     try {
       
-
-      // Sending email after form submission
       await axios.post('http://localhost:8000/api/v1/payment/sendemail', {
         email: formData.email,
       });
 
       setSubmitted(true);
-      setEmailSent(true); // Set email sent to true
+      setEmailSent(true); 
       setFormData({ name: '', email: '', phone: '', message: '' });
-
-      // Display Toastify message
-      toast.success('Thank you for your interest in volunteering! We will be in touch soon.');
+     toast.success('Thank you for your interest in volunteering! We will be in touch soon.');
     } catch (error) {
       console.error('Error submitting form or sending email:', error);
       toast.error('There was an error processing your request. Please try again.');

@@ -5,28 +5,27 @@ const morgan = require("morgan");
 
 const connectDB = require("./config/db");
 
-//dot config
+
 dotenv.config();
 
-//mongodb connection
+
 connectDB();
 
-//rest object
+
 const app = express();
 
-//middlewares
+
 app.use(express.json());
 const cors = require('cors');
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow your frontend origin
+  origin: 'http://localhost:3000',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
 
 app.use(morgan("dev"));
 
-//routes
-// 1 test route
+
 app.use("/api/v1/test", require("./routes/testRoutes"));
 app.use("/api/v1/auth", require("./routes/authRoutes"));
 app.use("/api/v1/inventory", require("./routes/inventoryRoutes"));
@@ -35,10 +34,10 @@ app.use("/api/v1/admin", require("./routes/adminRoutes"));
 const sendEmail = require("./utils/sendEmail");
 
 
-//port
+
 const PORT = process.env.PORT || 8000;
 
-//listen
+
 app.listen(PORT, () => {
   console.log(
     `Node Server Running In ${process.env.DEV_MODE} ModeOn Port ${process.env.PORT}`
