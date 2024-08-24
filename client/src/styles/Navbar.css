@@ -1,0 +1,42 @@
+/* Navbar.css */
+
+/* Ensure the background color and shadow of the navbar */
+.navbar {
+    background-color: #fff; /* Adjust as needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  
+  /* Styles for the navbar brand */
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0066cc; /* Customize color as needed */
+  }
+  
+  /* Styles for the logo */
+  .navbar-brand img {
+    border-radius: 50%;
+  }
+  
+  /* Styles for navigation links */
+  .nav-link {
+    color: #333; /* Default color */
+    font-size: 1.25rem; /* Increase font size */
+    font-weight: 500; /* Optional, for bolder text */
+  }
+  
+  /* Hover effect for navigation links */
+  .nav-link:hover {
+    color: #0066cc; /* Customize hover color */
+  }
+  
+  /* Navbar toggler button customization */
+  .navbar-toggler {
+    border: none;
+  }
+  
+  /* Ensure the toggler icon is visible */
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,..."); /* Customize as needed */
+  }
+  

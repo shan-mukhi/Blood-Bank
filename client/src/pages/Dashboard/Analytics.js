@@ -1,3 +1,113 @@
+// import React, { useState, useEffect } from "react";
+// import Header from "../../components/shared/Layout/Header";
+// import API from "./../../services/API";
+// import moment from "moment";
+
+// const Analytics = () => {
+//   const [data, setData] = useState([]);
+//   const [inventoryData, setInventoryData] = useState([]);
+//   const colors = [
+//     "#884A39",
+//     "#C38154",
+//     "#FFC26F",
+//     "#4F709C",
+//     "#4942E4",
+//     "#0079FF",
+//     "#FF0060",
+//     "#22A699",
+//   ];
+//   //GET BLOOD GROUP DATA
+//   const getBloodGroupData = async () => {
+//     try {
+//       const { data } = await API.get("/analytics/bloodGroups-data");
+//       if (data?.success) {
+//         setData(data?.bloodGroupData);
+//         // console.log(data);
+//       }
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+
+//   //lifrecycle method
+//   useEffect(() => {
+//     getBloodGroupData();
+//   }, []);
+
+//   //get function
+//   const getBloodRecords = async () => {
+//     try {
+//       const { data } = await API.get("/inventory/get-recent-inventory");
+//       if (data?.success) {
+//         setInventoryData(data?.inventory);
+//         console.log(data);
+//       }
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+
+//   useEffect(() => {
+//     getBloodRecords();
+//   }, []);
+//   return (
+//     <>
+//       <Header />
+//       <div className="d-flex flex-row flex-wrap">
+//         {data?.map((record, i) => (
+//           <div
+//             className="card m-2 p-1"
+//             key={i}
+//             style={{ width: "18rem", backgroundColor: `${colors[i]}` }}
+//           >
+//             <div className="card-body">
+//               <h1 className="card-title bg-light text-dark text-center mb-3">
+//                 {record.bloodGroup}
+//               </h1>
+//               <p className="card-text">
+//                 Total In : <b>{record.totalIn}</b> (ML)
+//               </p>
+//               <p className="card-text">
+//                 Total Out : <b>{record.totalOut}</b> (ML)
+//               </p>
+//             </div>
+//             <div className="card-footer text-light bg-dark text-center">
+//               Total Available : <b>{record.availabeBlood}</b> (ML)
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//       <div className="container my-3">
+//         <h1 className="my-3">Recent Blood Transactions</h1>
+//         <table className="table ">
+//           <thead>
+//             <tr>
+//               <th scope="col">Blood Group</th>
+//               <th scope="col">Inventory Type</th>
+//               <th scope="col">Quantity</th>
+//               <th scope="col">Donar Email</th>
+//               <th scope="col">TIme & Date</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {inventoryData?.map((record) => (
+//               <tr key={record._id}>
+//                 <td>{record.bloodGroup}</td>
+//                 <td>{record.inventoryType}</td>
+//                 <td>{record.quantity} (ML)</td>
+//                 <td>{record.email}</td>
+//                 <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
+//               </tr>
+//             ))}
+//           </tbody>
+//         </table>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Analytics;
+
 import React, { useState, useEffect } from "react";
 import Header from "../../components/shared/Layout/Header";
 import API from "./../../services/API";
@@ -7,15 +117,16 @@ const Analytics = () => {
   const [data, setData] = useState([]);
   const [inventoryData, setInventoryData] = useState([]);
   const colors = [
-    "#884A39",
-    "#C38154",
-    "#FFC26F",
-    "#4F709C",
-    "#4942E4",
-    "#0079FF",
-    "#FF0060",
-    "#22A699",
+    "#FF6F61", // Coral
+    "#6B5B95", // Purple
+    "#88B04B", // Olive Green
+    "#F7CAC9", // Light Pink
+    "#92A8D1", // Light Blue
+    "#955251", // Brown
+    "#B565A7", // Violet
+    "#009B77", // Teal
   ];
+
   //GET BLOOD GROUP DATA
   const getBloodGroupData = async () => {
     try {
@@ -50,43 +161,50 @@ const Analytics = () => {
   useEffect(() => {
     getBloodRecords();
   }, []);
+
   return (
     <>
       <Header />
-      <div className="d-flex flex-row flex-wrap">
+      <div className="d-flex flex-row flex-wrap justify-content-center">
         {data?.map((record, i) => (
           <div
-            className="card m-2 p-1"
+            className="card m-3 p-2"
             key={i}
-            style={{ width: "18rem", backgroundColor: `${colors[i]}` }}
+            style={{
+              width: "20rem",
+              backgroundColor: `${colors[i % colors.length]}`,
+              color: "#fff",
+              borderRadius: "15px",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+            }}
           >
             <div className="card-body">
-              <h1 className="card-title bg-light text-dark text-center mb-3">
+              <h2 className="card-title bg-light text-dark text-center mb-3 rounded-pill py-2">
                 {record.bloodGroup}
-              </h1>
+              </h2>
               <p className="card-text">
-                Total In : <b>{record.totalIn}</b> (ML)
+                <strong>Total In:</strong> {record.totalIn} ML
               </p>
               <p className="card-text">
-                Total Out : <b>{record.totalOut}</b> (ML)
+                <strong>Total Out:</strong> {record.totalOut} ML
               </p>
             </div>
             <div className="card-footer text-light bg-dark text-center">
-              Total Available : <b>{record.availabeBlood}</b> (ML)
+              <strong>Total Available:</strong> {record.availabeBlood} ML
             </div>
           </div>
         ))}
       </div>
-      <div className="container my-3">
-        <h1 className="my-3">Recent Blood Transactions</h1>
-        <table className="table ">
-          <thead>
+      <div className="container my-4">
+        <h1 className="text-center mb-4">Recent Blood Transactions</h1>
+        <table className="table table-hover">
+          <thead className="thead-dark">
             <tr>
               <th scope="col">Blood Group</th>
               <th scope="col">Inventory Type</th>
               <th scope="col">Quantity</th>
-              <th scope="col">Donar Email</th>
-              <th scope="col">TIme & Date</th>
+              <th scope="col">Donor Email</th>
+              <th scope="col">Time & Date</th>
             </tr>
           </thead>
           <tbody>
@@ -94,7 +212,7 @@ const Analytics = () => {
               <tr key={record._id}>
                 <td>{record.bloodGroup}</td>
                 <td>{record.inventoryType}</td>
-                <td>{record.quantity} (ML)</td>
+                <td>{record.quantity} ML</td>
                 <td>{record.email}</td>
                 <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
               </tr>

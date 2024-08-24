@@ -1,0 +1,51 @@
+/* AboutUs.css */
+
+.about-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+    background-color: #ffffff;
+    padding: 2rem;
+}
+
+.about-us-content {
+    max-width: 800px;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align all text within the content */
+}
+
+.about-us-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 1rem;
+}
+
+.about-us-text {
+    font-size: 1.125rem;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.about-us-mission, .about-us-team {
+    margin-top: 2rem;
+}
+
+.mission-heading, .team-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #444444;
+    margin-bottom: 0.5rem;
+}
+
+.mission-text, .team-text {
+    font-size: 1.125rem;
+    color: #555555;
+    line-height: 1.6;
+}

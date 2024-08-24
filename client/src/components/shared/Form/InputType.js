@@ -27,3 +27,4 @@ const InputType = ({
 };
 
 export default InputType;
+

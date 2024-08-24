@@ -9,7 +9,7 @@
     "client": "npm start --prefix ./client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "techinfoyt",
+  "author": "shanmukhi",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -21,6 +21,9 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.1.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.22"
+    "nodemailer": "^6.9.14",
+    "nodemon": "^2.0.22",
+    "react-bootstrap": "^2.10.4",
+    "react-toastify": "^10.0.5"
   }
 }

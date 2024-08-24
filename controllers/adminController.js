@@ -17,7 +17,7 @@ const getDonarsListController = async (req, res) => {
     console.log(error);
     return res.status(500).send({
       success: false,
-      message: "Error In DOnar List API",
+      message: "Error In Donar List API",
       error,
     });
   }
@@ -54,14 +54,14 @@ const getOrgListController = async (req, res) => {
     return res.status(200).send({
       success: true,
       Toatlcount: orgData.length,
-      message: "ORG List Fetched Successfully",
+      message: "Organisation List Fetched Successfully",
       orgData,
     });
   } catch (error) {
     console.log(error);
     return res.status(500).send({
       success: false,
-      message: "Error In ORG List API",
+      message: "Error In Organisation List API",
       error,
     });
   }
@@ -80,7 +80,7 @@ const deleteDonarController = async (req, res) => {
     console.log(error);
     return res.status(500).send({
       success: false,
-      message: "Error while deleting ",
+      message: "Error while deleting the record ",
       error,
     });
   }

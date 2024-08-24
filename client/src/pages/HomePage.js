@@ -31,6 +31,7 @@ const HomePage = () => {
   return (
     <Layout>
       {user?.role === "admin" && navigate("/admin")}
+      {user?.role === "donar" && navigate("/donorhome")}
       {error && <span>{alert(error)}</span>}
       {loading ? (
         <Spinner />

@@ -1,0 +1,112 @@
+/* Contact.css */
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    min-height: 700px;
+    background-color: #ffffff;
+    padding-top: 0;
+    position: relative;
+}
+
+.contact-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.contact-info {
+    background-color: #f7f7f7;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.contact-title {
+    font-size: 1.875rem; /* 3xl */
+    color: #2d3748; /* gray-800 */
+    font-weight: 800; /* extrabold */
+    margin: 0;
+}
+
+.contact-subtitle {
+    font-size: 1.25rem; /* lg */
+    color: #4a5568; /* gray-600 */
+    font-weight: 500; /* medium */
+    margin-top: 0.5rem;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    color: #4a5568; /* gray-600 */
+}
+
+.contact-icon {
+    width: 2rem;
+    height: 2rem;
+    color: #a0aec0; /* gray-500 */
+}
+
+.contact-text {
+    margin-left: 1rem;
+    font-size: 1rem; /* md */
+    font-weight: 600; /* semibold */
+    max-width: 10rem; /* Optional for width limit */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0; /* gray-400 */
+    font-size: 1rem; /* md */
+    font-weight: 600; /* semibold */
+    color: #2d3748; /* gray-800 */
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #f6ad55; /* orange-500 */
+    outline: none;
+}
+
+.submit-button {
+    background-color: #dd6b20; /* orange-700 */
+    color: #ffffff;
+    font-weight: 700; /* bold */
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 0.75rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #f56565; /* orange-600 */
+}

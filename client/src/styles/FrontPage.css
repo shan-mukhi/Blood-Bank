@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .frontpage-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .carousel-container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  
+  .carousel-container img {
+    width: auto;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+    margin-bottom: 20px;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card:hover {
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translate3D(0, -1px, 0) scale(1.03);
+  }
+  
+  .info-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+  }
+  
+  .info-card .card-img-top {
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .my-5 {
+    margin: 3rem 0;
+  }
+  
+  .display-4 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  .lead {
+    font-size: 1.25rem;
+    color: #6c757d;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  
+  .card-date {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+  /* Additional styling for headings */
+h2 {
+    color: #333;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    color: red;
+  }
+  
+  /* Ensure responsive design */
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
+  
+ 
+  /* Styling for the circles section */
+/* Styling for the circles section */
+.circles {
+    display: flex;
+    flex-direction: column; /* Column layout for smaller screens */
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    align-items: center; /* Center align items */
+}
+
+.circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: rgb(211, 101, 101); /* Light gray background */
+    width: 200px; /* Adjust width */
+    height: 200px; /* Adjust height */
+    border-radius: 50%;
+    align-items: center;
+    box-shadow: 0 0 10px 0 rgba(8, 95, 47, 0.15); /* Subtle shadow */
+    margin-bottom: 2rem; /* Add margin between circles */
+}
+
+.counter {
+    font-size: 3rem; /* Larger font size for numbers */
+    font-weight: bold;
+    color: rgb(0, 0, 0); /* Black color */
+}
+
+.circle-name {
+    font-size: 1.1rem; /* Font size for labels */
+    font-weight: bold;
+    color: rgb(2, 7, 10); /* Dark blue color */
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .circles {
+        flex-direction: row; /* Switch back to row layout */
+        justify-content: space-around; /* Space out the circles */
+    }
+
+    .circle {
+        margin-bottom: 0; /* Remove margin between circles */
+    }
+}
