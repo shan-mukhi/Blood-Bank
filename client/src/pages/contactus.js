@@ -7,18 +7,17 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Contact() {
     const [email, setEmail] = useState("");
 
-    // Function to send email
     const sendEmail = async (e) => {
         e.preventDefault();
 
         try {
             const response = await axios.post(
-                "http://localhost:8000/api/v1/payment/sendemail",
+                "http://localhost:8000/api/v1/contactus/sendemail",
                 { email }
             );
             console.log(response.data);
             toast.success("We will soon reach out to you on email!");
-            setEmail(""); // Clear the email field
+            setEmail(""); 
         } catch (error) {
             console.error("There was an error sending the email!", error);
             toast.error("Failed to send email. Please try again.");
@@ -83,7 +82,7 @@ export default function Contact() {
                             </div>
                         </div>
 
-                        <div className="contact-details">
+                        <div className="contact-detail">
                             <svg
                                 fill="none"
                                 stroke="currentColor"

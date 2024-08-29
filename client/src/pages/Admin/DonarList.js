@@ -5,11 +5,11 @@ import API from "../../services/API";
 
 const DonarList = () => {
   const [data, setData] = useState([]);
-  //find donar records
+
   const getDonars = async () => {
     try {
       const { data } = await API.get("/admin/donar-list");
-      //   console.log(data);
+     
       if (data?.success) {
         setData(data?.donarData);
       }
@@ -53,7 +53,7 @@ const DonarList = () => {
         <tbody>
           {data?.map((record) => (
             <tr key={record._id}>
-              <td>{record.name || record.organisationName + " (ORG)"}</td>
+              <td>{record.name }</td>
               <td>{record.email}</td>
               <td>{record.phone}</td>
               <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>

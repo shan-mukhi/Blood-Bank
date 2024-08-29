@@ -4,10 +4,8 @@ import API from "../../services/API";
 import { getCurrentUser } from "../../redux/features/auth/authActions";
 import { Navigate } from "react-router-dom";
 const ProtectedRoute = ({ children }) => {
-  const dispatch = useDispatch();
-
-  //get user current
-  const getUser = async () => {
+const dispatch = useDispatch();
+const getUser = async () => {
     try {
       const { data } = await API.get("/auth/current-user");
       if (data?.success) {
@@ -26,7 +24,7 @@ const ProtectedRoute = ({ children }) => {
   if (localStorage.getItem("token")) {
     return children;
   } else {
-    return <Navigate to="/login" />;
+    return <Navigate to="/home" />;
   }
 };
 

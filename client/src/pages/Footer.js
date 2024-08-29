@@ -1,8 +1,9 @@
 import React from "react";
+import '../styles/Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white text-center py-3">
+    <footer className="footer">
       <p>&copy; RedReserve - All rights reserved.</p>
     </footer>
   );

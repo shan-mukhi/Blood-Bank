@@ -26,7 +26,7 @@ const HospitalList = () => {
   const handelDelete = async (id) => {
     try {
       let answer = window.prompt(
-        "Are You SUre Want To Delete This Hospital",
+        "Are You Sure Want To Delete This Hospital",
         "Sure"
       );
       if (!answer) return;

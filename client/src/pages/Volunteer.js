@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../styles/VolunteerForm.css'; // Add your styles here
+import '../styles/VolunteerForm.css'; 
 
 const VolunteerForm = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +12,7 @@ const VolunteerForm = () => {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
-  const [emailSent, setEmailSent] = useState(false); // New state to track email sending
+  const [emailSent, setEmailSent] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,15 +22,14 @@ const VolunteerForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      
       await axios.post('http://localhost:8000/api/v1/payment/sendemail', {
         email: formData.email,
       });
 
       setSubmitted(true);
-      setEmailSent(true); 
+      setEmailSent(true);
       setFormData({ name: '', email: '', phone: '', message: '' });
-     toast.success('Thank you for your interest in volunteering! We will be in touch soon.');
+      toast.success('Thank you for your interest in volunteering! We will be in touch soon.');
     } catch (error) {
       console.error('Error submitting form or sending email:', error);
       toast.error('There was an error processing your request. Please try again.');
@@ -94,3 +93,4 @@ const VolunteerForm = () => {
 };
 
 export default VolunteerForm;
+

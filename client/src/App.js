@@ -73,10 +73,11 @@ function App() {
         <Route
           path="/home"
            element={
-            <ProtectedRoute>
+          <>
             <Header/>
               <FrontPage />
-            </ProtectedRoute>
+              </>
+            
           }
         />
         <Route
@@ -173,24 +174,23 @@ function App() {
         <Route
           path="/aboutus"
           element={
-            <ProtectedRoute>
+            <>
               <Header/>
               <AboutUs />
-            </ProtectedRoute>
+              </>
+           
           }
         />
         <Route
-        
-          path="/contactus"
-          
+         path="/contactus"
           element={
-            <ProtectedRoute>
+            <>
               <Header />
               <Contact />
-            </ProtectedRoute>
+              </>
+           
           }
-        
-        />
+      />
       </Routes>
       <Footer />
     </>

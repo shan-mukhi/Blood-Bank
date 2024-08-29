@@ -1,42 +1,54 @@
-/* Navbar.css */
 
-/* Ensure the background color and shadow of the navbar */
 .navbar {
-    background-color: #fff; /* Adjust as needed */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  background-color: #ffffff;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.navbar-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.navbar-title {
+  color: #333;
+}
+
+
+.navbar-toggler {
+  border: none;
+}
+
+
+.navbar-nav .nav-item {
+  margin-left: 15px;
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    margin-top: 1rem;
   }
-  
-  /* Styles for the navbar brand */
-  .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #0066cc; /* Customize color as needed */
+
+  .navbar-nav .nav-item {
+    margin: 0.5rem 0;
   }
-  
-  /* Styles for the logo */
-  .navbar-brand img {
-    border-radius: 50%;
-  }
-  
-  /* Styles for navigation links */
-  .nav-link {
-    color: #333; /* Default color */
-    font-size: 1.25rem; /* Increase font size */
-    font-weight: 500; /* Optional, for bolder text */
-  }
-  
-  /* Hover effect for navigation links */
-  .nav-link:hover {
-    color: #0066cc; /* Customize hover color */
-  }
-  
-  /* Navbar toggler button customization */
-  .navbar-toggler {
-    border: none;
-  }
-  
-  /* Ensure the toggler icon is visible */
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,..."); /* Customize as needed */
-  }
-  
+}

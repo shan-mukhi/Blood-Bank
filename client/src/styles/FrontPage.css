@@ -87,7 +87,7 @@ body {
     font-size: 0.875rem;
     color: #6c757d;
   }
-  /* Additional styling for headings */
+ 
 h2 {
     color: #333;
     margin-top: 1.5rem;
@@ -101,21 +101,18 @@ h2 {
     color: red;
   }
   
-  /* Ensure responsive design */
   .card-img-top {
     width: 100%;
     height: auto;
   }
   
  
-  /* Styling for the circles section */
-/* Styling for the circles section */
 .circles {
     display: flex;
-    flex-direction: column; /* Column layout for smaller screens */
+    flex-direction: column; 
     margin-top: 4rem;
     margin-bottom: 3rem;
-    align-items: center; /* Center align items */
+    align-items: center; 
 }
 
 .circle {
@@ -123,35 +120,35 @@ h2 {
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
-    background-color: rgb(211, 101, 101); /* Light gray background */
-    width: 200px; /* Adjust width */
-    height: 200px; /* Adjust height */
+    background-color: rgb(211, 101, 101); 
+    width: 200px; 
+    height: 200px; 
     border-radius: 50%;
     align-items: center;
-    box-shadow: 0 0 10px 0 rgba(8, 95, 47, 0.15); /* Subtle shadow */
-    margin-bottom: 2rem; /* Add margin between circles */
+    box-shadow: 0 0 10px 0 rgba(8, 95, 47, 0.15);
+    margin-bottom: 2rem; 
 }
 
 .counter {
-    font-size: 3rem; /* Larger font size for numbers */
+    font-size: 3rem; 
     font-weight: bold;
-    color: rgb(0, 0, 0); /* Black color */
+    color: rgb(0, 0, 0); 
 }
 
 .circle-name {
-    font-size: 1.1rem; /* Font size for labels */
+    font-size: 1.1rem; 
     font-weight: bold;
-    color: rgb(2, 7, 10); /* Dark blue color */
+    color: rgb(2, 7, 10); 
 }
 
-/* Media query for larger screens */
+
 @media (min-width: 768px) {
     .circles {
-        flex-direction: row; /* Switch back to row layout */
-        justify-content: space-around; /* Space out the circles */
+        flex-direction: row; 
+        justify-content: space-around;
     }
 
     .circle {
-        margin-bottom: 0; /* Remove margin between circles */
+        margin-bottom: 0; 
     }
 }

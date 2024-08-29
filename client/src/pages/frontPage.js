@@ -6,13 +6,10 @@ import CountUp from "react-countup";
 import { motion } from "framer-motion";
 import image1 from "../images/asset1.jpg";
 import image2 from "../images/asset2.jpg";
-
 import image4 from "../images/asset5.jpg";
 import image5 from "../images/asset8.jpg";
 import image6 from "../images/asset10.jpeg";
 
-import Navbar from "../pages/Navbar";
-import Footer from "../pages/Footer";
 import "../styles/FrontPage.css";
 
 const FrontPage = () => {
@@ -104,7 +101,7 @@ const FrontPage = () => {
               animate="visible"
             >
               <div className="counter">
-                <CountUp start={0} end={150000} duration={10} />
+                <CountUp start={0} end={150000} duration={30} />
               </div>
               <div className="circle-name">Lives Saved</div>
             </motion.div>
@@ -115,7 +112,7 @@ const FrontPage = () => {
               animate="visible"
             >
               <div className="counter">
-                <CountUp start={0} end={6000} duration={10} />
+                <CountUp start={0} end={6000} duration={30} />
               </div>
               <div className="circle-name">Donors Registered</div>
             </motion.div>
@@ -126,7 +123,7 @@ const FrontPage = () => {
               animate="visible"
             >
               <div className="counter">
-                <CountUp start={0} end={400} duration={10} />
+                <CountUp start={0} end={400} duration={30} />
               </div>
               <div className="circle-name">Blood Drives</div>
             </motion.div>
