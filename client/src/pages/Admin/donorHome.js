@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../../components/shared/Layout/Layout";
 import { useSelector } from "react-redux";
+import EligibilityForm from "./EligibilityForm.js";
 
 const DonorHome = () => {
   const { user } = useSelector((state) => state.auth);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <Layout>
@@ -14,6 +16,9 @@ const DonorHome = () => {
           </h1>
           <h3 className="donor-subtitle">Contribute to Saving Lives</h3>
           <hr />
+          <button className="btn btn-danger my-3" onClick={() => setShowModal(true)}>
+            Check Eligibility
+          </button>
           <p className="donor-description">
             As a valued donor, you play a critical role in our community by
             contributing your blood to save lives. Your donations help ensure
@@ -34,8 +39,16 @@ const DonorHome = () => {
           </p>
         </div>
       </div>
+
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <EligibilityForm closeModal={() => setShowModal(false)} />
+          </div>
+        </div>
+      )}
+
       <style jsx>{`
-        
         .donor-home-container {
           background-color: #f5f7fa;
           padding: 20px;
@@ -43,7 +56,6 @@ const DonorHome = () => {
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-      
         .donor-welcome-title {
           font-size: 2.5rem;
           font-weight: 700;
@@ -51,7 +63,6 @@ const DonorHome = () => {
           margin-bottom: 10px;
         }
 
-      
         .donor-subtitle {
           font-size: 1.75rem;
           font-weight: 600;
@@ -59,7 +70,6 @@ const DonorHome = () => {
           margin-bottom: 20px;
         }
 
-    
         .donor-description {
           font-size: 1.1rem;
           line-height: 1.6;
@@ -67,9 +77,30 @@ const DonorHome = () => {
           margin-bottom: 15px;
         }
 
-        /* Add some padding to the bottom of the container */
         .donor-welcome {
           padding-bottom: 20px;
+        }
+
+        .modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.6);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 999;
+        }
+
+        .modal-box {
+          background: white;
+          padding: 30px;
+          border-radius: 12px;
+          width: 90%;
+          max-width: 500px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
       `}</style>
     </Layout>
@@ -77,4 +108,3 @@ const DonorHome = () => {
 };
 
 export default DonorHome;
-
